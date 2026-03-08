@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Soft circular orb with gradient — the breathing center of the gate -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:gradientRadius="50%p"
+        android:startColor="#4D5E3F3A"
+        android:centerColor="#993D6B38"
+        android:endColor="#CC2D4A2A" />
+</shape>

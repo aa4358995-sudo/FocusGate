@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FocusGate Notification Listener Configuration
+    Captures all notifications during Work Mode sessions.
+    Exceptions: Phone calls are always allowed through.
+-->
+<notification-listener
+    xmlns:android="http://schemas.android.com/apk/res/android" />

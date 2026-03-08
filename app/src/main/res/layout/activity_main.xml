@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="56dp"
+        android:paddingBottom="40dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FOCUSGATE"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/dm_sans"
+                    android:textColor="@color/sage_green"
+                    android:letterSpacing="0.15"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Be here. On purpose."
+                    android:textSize="22sp"
+                    android:fontFamily="@font/dm_serif_display"
+                    android:textColor="@color/charcoal"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btn_settings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_settings"
+                android:tint="@color/warm_gray_dark"
+                android:padding="8dp"
+                android:background="@drawable/bg_icon_btn"
+                android:contentDescription="Settings" />
+        </LinearLayout>
+
+        <!-- Permission banner (shown when permissions missing) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/parchment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_permission_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2 permissions needed"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/dm_sans"
+                    android:textColor="@color/earth_brown_dark" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_grant_permissions"
+                    style="@style/Widget.FocusGate.Button.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Setup"
+                    android:textSize="13sp"
+                    android:paddingHorizontal="16dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Stats Row ─────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <!-- Focus Time stat -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                style="@style/Widget.FocusGate.Card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:id="@+id/tv_focus_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0m"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/dm_serif_display"
+                        android:textColor="@color/sage_green_dark" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Focus time"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/dm_sans"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Gates stat -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="3dp"
+                style="@style/Widget.FocusGate.Card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:id="@+id/tv_gate_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/dm_serif_display"
+                        android:textColor="@color/sage_green_dark" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gates passed"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/dm_sans"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Streak stat -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                style="@style/Widget.FocusGate.Card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:id="@+id/tv_streak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0d"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/dm_serif_display"
+                        android:textColor="@color/sage_green_dark" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Day streak"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/dm_sans"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ── Intent Gate Toggle Card ─────────────────── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/Widget.FocusGate.Card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="4dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Intent Gate"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/dm_sans_medium"
+                        android:textColor="@color/text_primary" />
+
+                    <TextView
+                        android:id="@+id/tv_gate_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/dm_sans"
+                        android:textColor="@color/sage_green"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch_gate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="@color/warm_white"
+                    app:trackTint="@color/sage_green" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Work Mode Active Card (visible only when active) ── -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_work_mode_active"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/deep_forest">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WORK MODE ACTIVE"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/dm_sans"
+                    android:textColor="@color/sage_green_light"
+                    android:letterSpacing="0.1" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_resume_work_mode"
+                    style="@style/Widget.FocusGate.Button.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Return to Focus Session"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Start Work Mode Card ─────────────────────── -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_start_work_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/sage_green_faint">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Work Mode"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/dm_serif_display"
+                    android:textColor="@color/earth_brown_dark" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lock yourself into a distraction-free session with only your chosen apps."
+                    android:textSize="13sp"
+                    android:fontFamily="@font/dm_sans"
+                    android:textColor="@color/earth_brown"
+                    android:lineSpacingMultiplier="1.4"
+                    android:layout_marginTop="6dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_start_work_mode"
+                    style="@style/Widget.FocusGate.Button.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Start a session →"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── Services Status ─────────────────────────── -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SYSTEM STATUS"
+            android:textSize="11sp"
+            android:fontFamily="@font/dm_sans"
+            android:textColor="@color/text_tertiary"
+            android:letterSpacing="0.1"
+            android:textAllCaps="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginStart="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                style="@style/Widget.FocusGate.Card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accessibility"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/dm_sans"
+                        android:textColor="@color/text_secondary" />
+                    <TextView
+                        android:id="@+id/tv_accessibility_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inactive"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/dm_sans_medium"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                style="@style/Widget.FocusGate.Card">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Notifications"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/dm_sans"
+                        android:textColor="@color/text_secondary" />
+                    <TextView
+                        android:id="@+id/tv_notif_listener_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inactive"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/dm_sans_medium"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- History button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_history"
+            style="@style/Widget.FocusGate.Button.Ghost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Session History"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+</ScrollView>

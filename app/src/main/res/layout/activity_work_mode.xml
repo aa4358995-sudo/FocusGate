@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_work_mode.xml — "The Sanctuary"
+     Minimal locked launcher. Deep forest dark theme. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/work_mode_bg">
+
+    <!-- Status bar space -->
+    <View
+        android:id="@+id/status_bar_space"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Top bar: label + emergency exit -->
+    <TextView
+        android:id="@+id/tv_session_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Focus Session"
+        android:textSize="12sp"
+        android:fontFamily="@font/dm_sans"
+        android:textColor="@color/sage_green_light"
+        android:letterSpacing="0.1"
+        android:textAllCaps="true"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/status_bar_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Countdown timer — the focal point -->
+    <TextView
+        android:id="@+id/tv_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25:00"
+        android:textSize="72sp"
+        android:fontFamily="@font/dm_serif_display"
+        android:textColor="@color/work_mode_timer"
+        android:letterSpacing="-0.03"
+        app:layout_constraintTop_toBottomOf="@id/tv_session_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Circular progress ring behind timer -->
+    <ProgressBar
+        android:id="@+id/progress_timer"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:max="100"
+        android:progress="0"
+        android:rotation="-90"
+        android:progressDrawable="@drawable/progress_ring"
+        app:layout_constraintTop_toTopOf="@id/tv_countdown"
+        app:layout_constraintBottom_toBottomOf="@id/tv_countdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/work_divider"
+        android:layout_width="60dp"
+        android:layout_height="1dp"
+        android:background="@color/work_mode_accent"
+        android:alpha="0.4"
+        app:layout_constraintTop_toBottomOf="@id/tv_countdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Whitelisted apps label -->
+    <TextView
+        android:id="@+id/tv_apps_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALLOWED APPS"
+        android:textSize="11sp"
+        android:fontFamily="@font/dm_sans"
+        android:textColor="@color/sage_green_light"
+        android:letterSpacing="0.12"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@id/work_divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- App grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_whitelisted_apps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tv_apps_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        android:layout_marginTop="12dp" />
+
+    <!-- Bottom bar -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Emergency exit (small, not prominent) -->
+        <TextView
+            android:id="@+id/btn_emergency_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Emergency exit"
+            android:textSize="12sp"
+            android:fontFamily="@font/dm_sans"
+            android:textColor="@color/work_mode_text"
+            android:alpha="0.3"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp" />
+    </LinearLayout>
+
+    <!-- Blocked app message (fades in/out) -->
+    <TextView
+        android:id="@+id/tv_blocked_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="That app isn't in your whitelist."
+        android:textSize="14sp"
+        android:fontFamily="@font/dm_sans"
+        android:textColor="@color/warm_white"
+        android:gravity="center"
+        android:background="@drawable/bg_blocked_toast"
+        android:padding="12dp"
+        android:visibility="gone"
+        android:alpha="0"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

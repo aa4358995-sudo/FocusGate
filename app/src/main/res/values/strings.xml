@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FocusGate</string>
+    <string name="accessibility_service_label">FocusGate – Intent Monitor</string>
+    <string name="accessibility_service_description">FocusGate monitors foreground apps to enforce your stated intent, apply gentle nudges for digital habit correction, and manage Work Mode restrictions.</string>
+    <string name="accessibility_service_summary">Monitors app usage to keep you focused on your stated intent</string>
+    <string name="notification_service_label">FocusGate – Notification Guard</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- overlay_nudge_level2.xml — Stern center dialog nudge -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_nudge_level2"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second reminder"
+        android:textSize="11sp"
+        android:fontFamily="@font/dm_sans"
+        android:textColor="#C67B5C"
+        android:letterSpacing="0.1"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:fontFamily="@font/dm_sans"
+        android:textColor="#3A3530"
+        android:layout_marginTop="10dp"
+        android:lineSpacingMultiplier="1.5" />
+
+    <TextView
+        android:id="@+id/btn_acknowledge"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="I'll refocus"
+        android:textSize="14sp"
+        android:fontFamily="@font/dm_sans_medium"
+        android:textColor="#F9F7F4"
+        android:gravity="center"
+        android:background="@drawable/bg_btn_sage"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

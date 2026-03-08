@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- overlay_grayscale.xml
+     Full-screen translucent gray overlay.
+     Applied over everything when Nudge Level 2 activates.
+     Non-touchable — doesn't interfere with user interaction. -->
+<View
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66888888"
+    android:importantForAccessibility="no" />

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ══════════════════════════════════════════════
+         PRIMARY PALETTE — Sage & Earth
+         ══════════════════════════════════════════════ -->
+
+    <!-- Sage Greens -->
+    <color name="sage_green">#7D9B76</color>
+    <color name="sage_green_dark">#4E6E47</color>
+    <color name="sage_green_light">#A8C2A2</color>
+    <color name="sage_green_faint">#E8F0E6</color>
+    <color name="sage_green_mist">#F2F6F1</color>
+
+    <!-- Earthy Neutrals -->
+    <color name="warm_white">#F9F7F4</color>
+    <color name="off_white">#F4F1EC</color>
+    <color name="parchment">#EDE8DF</color>
+    <color name="warm_gray_light">#E5E0D8</color>
+    <color name="warm_gray">#C4BDB4</color>
+    <color name="warm_gray_dark">#8A847C</color>
+
+    <!-- Deep Earth Tones -->
+    <color name="earth_brown">#6B5B4E</color>
+    <color name="earth_brown_dark">#4A3D35</color>
+    <color name="charcoal">#3A3530</color>
+    <color name="deep_forest">#2D4A2A</color>
+
+    <!-- Accent (Terracotta — warm, not aggressive) -->
+    <color name="terracotta">#C67B5C</color>
+    <color name="terracotta_light">#E8A98A</color>
+    <color name="amber_soft">#D4A559</color>
+
+    <!-- ══════════════════════════════════════════════
+         SEMANTIC COLORS
+         ══════════════════════════════════════════════ -->
+
+    <!-- Backgrounds -->
+    <color name="bg_primary">@color/warm_white</color>
+    <color name="bg_secondary">@color/off_white</color>
+    <color name="bg_card">@color/parchment</color>
+    <color name="bg_overlay">#CC2D2D2D</color>
+
+    <!-- Intent Gate specific -->
+    <color name="gate_bg">#1A1F1A</color>
+    <color name="gate_bg_gradient_start">#0F150F</color>
+    <color name="gate_bg_gradient_end">#1A2818</color>
+    <color name="gate_orb_color">#3D6B38</color>
+    <color name="gate_orb_glow">#2A4A26</color>
+    <color name="gate_input_bg">#252B25</color>
+    <color name="gate_input_border">#3D5C3A</color>
+    <color name="gate_text_primary">#E8EDE7</color>
+    <color name="gate_text_secondary">#8CA389</color>
+    <color name="gate_chip_bg">#1E261E</color>
+
+    <!-- Work Mode specific -->
+    <color name="work_mode_bg">#0E1710</color>
+    <color name="work_mode_card">#162018</color>
+    <color name="work_mode_accent">#4A7A44</color>
+    <color name="work_mode_timer">#7FBF78</color>
+    <color name="work_mode_text">#D6E8D4</color>
+
+    <!-- Text -->
+    <color name="text_primary">@color/charcoal</color>
+    <color name="text_secondary">@color/warm_gray_dark</color>
+    <color name="text_tertiary">@color/warm_gray</color>
+    <color name="text_on_dark">@color/warm_white</color>
+
+    <!-- Nudge levels -->
+    <color name="nudge_level1">#F0C674</color>    <!-- Soft amber -->
+    <color name="nudge_level2">#C67B5C</color>    <!-- Terracotta -->
+    <color name="nudge_level3">#8B3A3A</color>    <!-- Deep warm red -->
+    <color name="nudge_overlay">#80808080</color> <!-- Semi-transparent gray -->
+
+    <!-- Status -->
+    <color name="status_active">@color/sage_green</color>
+    <color name="status_inactive">@color/warm_gray</color>
+    <color name="status_warning">@color/amber_soft</color>
+
+    <!-- Chip -->
+    <color name="chip_background">@color/sage_green_faint</color>
+
+    <!-- Material theme required -->
+    <color name="purple_200">#7D9B76</color>
+    <color name="purple_500">#4E6E47</color>
+    <color name="purple_700">#2D4A2A</color>
+    <color name="teal_200">#A8C2A2</color>
+    <color name="teal_700">#4E6E47</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

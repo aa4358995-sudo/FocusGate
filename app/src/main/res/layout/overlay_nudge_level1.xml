@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- overlay_nudge_level1.xml — Gentle top banner nudge -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_nudge_level1"
+    android:padding="16dp"
+    android:layout_margin="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🌱 Gentle reminder"
+            android:textSize="13sp"
+            android:fontFamily="@font/dm_sans_medium"
+            android:textColor="#4E6E47" />
+
+        <TextView
+            android:id="@+id/btn_dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✕"
+            android:textSize="16sp"
+            android:textColor="#7D9B76"
+            android:padding="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_original_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="@font/dm_serif_display"
+        android:textColor="#2D4A2A"
+        android:layout_marginTop="6dp" />
+
+    <TextView
+        android:id="@+id/tv_ai_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:fontFamily="@font/dm_sans"
+        android:textColor="#4E6E47"
+        android:layout_marginTop="4dp"
+        android:lineSpacingMultiplier="1.4" />
+
+    <TextView
+        android:id="@+id/btn_update_intent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update my intent"
+        android:textSize="12sp"
+        android:fontFamily="@font/dm_sans"
+        android:textColor="#7D9B76"
+        android:paddingTop="8dp" />
+</LinearLayout>
